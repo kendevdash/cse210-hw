@@ -4,7 +4,7 @@ using System.IO;
 
 public class GoalManager
 {
-    private const int PointsPerLevel = 500;
+    private const int _pointsPerLevel = 500;
 
     private readonly List<Goal> _goals = new List<Goal>();
     private int _score;
@@ -50,12 +50,12 @@ public class GoalManager
         Console.WriteLine("Goodbye! Keep chasing your Eternal Quest.");
     }
 
-    private int CurrentLevel(int score) => (score / PointsPerLevel) + 1;
+    private int CurrentLevel(int score) => (score / _pointsPerLevel) + 1;
 
     private void DisplayStatus()
     {
         int level = CurrentLevel(_score);
-        int pointsToNextLevel = (level * PointsPerLevel) - _score;
+        int pointsToNextLevel = (level * _pointsPerLevel) - _score;
 
         Console.WriteLine();
         Console.WriteLine($"Score: {_score}");
